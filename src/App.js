@@ -1,17 +1,45 @@
-import React  from 'react';
-import Header from './Header';
+  
+import React, { Component } from 'react';
+import Header from './Header.js';
+import './App.css';
 
-function App() {
-  return (
-    <div>
-    <Header/>
-        <button>Add</button>
-        <div>
-          <span>Name</span><br />
-          <span>Phone</span>
+class App extends Component {
+  render() {
+    let subscriber=[
+
+      {
+        id:1,
+        name:"shilpa bhat",
+        phone:"8888888"
+      },
+      {
+        id:2,
+        name:"rudra gowda m patil",
+        phone:"9999999"
+      }
+    ]
+    return (
+      <div>
+        <Header />
+        <div className="component-body-container">
+          <button className="custom-btn add-btn">Add</button>
+
+          <div className="grid-container heading-container">
+            <span className="grid-item name-heading">Name</span>
+            <span className="grid-item phone-heading">Phone</span>
+          </div>
+          {
+            subscriber.map(sub=>{
+              return <div key={sub.id} className="grid-container">
+                <span className="grid-item">{sub.name}</span>
+                <span className="grid-item">{sub.phone}</span>
+                </div>
+            })
+          }
         </div>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
