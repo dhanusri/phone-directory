@@ -11,6 +11,7 @@
     font-size: 0.9rem;
     cursor: pointer;
     outline: none;
+    background-color: red;
 }
 .add-btn {
     background: #7ab97a;
